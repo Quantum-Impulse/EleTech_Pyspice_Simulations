@@ -1,0 +1,30 @@
+**********
+* Copyright Intusoft 1997
+* All Rights Reserved
+**********
+*********************************************************
+*    STANDARD TTL DIGITAL LIBRARY BASED ON THE TEXAS    *
+*           INSTRUMENTS DATA BOOK (Volume 1)		    * 
+*									  					*
+*DEVELOPPED FOR INTUSOFT BY JEAN-CLAUDE MBOLI			*
+*Phone:(33) 4 76 44 43 30	    Fax:(33) 4 76 44 43 52	* 
+*e-mail:101736.631@compuserve.com				  		*
+*									  					*
+*				September 1996							*
+*				  					  					*
+*********************************************************
+**********************
+*SRC=7400;7400;TTL;74xx;2 input NAND gate
+*SYM=NAND2
+*7400 QUADRUPLE 2-INPUT POSITIVE-NAND GATES
+***
+.subckt 7400 in1 in2 out
+*FAMILY TTLin TTLin TTLout
+*pinout N 1 2 3;4 5 6;9 10 8;12 13 11:VCC=14 GND=7
+*pinout J 1 2 3;4 5 6;9 10 8;12 13 11:VCC=14 GND=7
+*pinout W 1 2 3;6 7 5;9 10 8;12 13 14:VCC=4 GND=11
+anand [in1 in2] out ls_nand 
+.model ls_nand d_nand(rise_delay=11n TOL=5% fall_delay=7n)
+.ends
+*
+*
